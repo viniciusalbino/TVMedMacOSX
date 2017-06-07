@@ -31,7 +31,6 @@ class RealmEncrypted {
             realm.refresh()
             return realm
         }
-        
         Realm.Configuration.defaultConfiguration.encryptionKey = getKey()
         let realm = try Realm()
         realm.refresh()

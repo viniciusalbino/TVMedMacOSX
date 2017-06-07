@@ -32,7 +32,6 @@
 		2CE5F78B1EE7948600200B08 /* RealmPersister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE5F78A1EE7948600200B08 /* RealmPersister.swift */; };
 		2CE5F78E1EE794A800200B08 /* KeychainAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE5F78D1EE794A800200B08 /* KeychainAccess.swift */; };
 		2CE5F7921EE794B600200B08 /* RealmEncrypted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE5F7901EE794B600200B08 /* RealmEncrypted.swift */; };
-		2CE5F7931EE794B600200B08 /* RealmToGroupsMigrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE5F7911EE794B600200B08 /* RealmToGroupsMigrator.swift */; };
 		2CE5F7971EE794D400200B08 /* Categorie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE5F7961EE794D400200B08 /* Categorie.swift */; };
 		2CE5F79A1EE7951D00200B08 /* Especiality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE5F7991EE7951D00200B08 /* Especiality.swift */; };
 		2CE5F79D1EE7953F00200B08 /* MidiaPromotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE5F79C1EE7953F00200B08 /* MidiaPromotion.swift */; };
@@ -100,7 +99,6 @@
 		2CE5F78A1EE7948600200B08 /* RealmPersister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmPersister.swift; path = LocalData/Core/RealmPersister.swift; sourceTree = "<group>"; };
 		2CE5F78D1EE794A800200B08 /* KeychainAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeychainAccess.swift; path = LocalData/KeychainAccess/KeychainAccess.swift; sourceTree = "<group>"; };
 		2CE5F7901EE794B600200B08 /* RealmEncrypted.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmEncrypted.swift; path = LocalData/Realm/RealmEncrypted.swift; sourceTree = "<group>"; };
-		2CE5F7911EE794B600200B08 /* RealmToGroupsMigrator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmToGroupsMigrator.swift; path = LocalData/Realm/RealmToGroupsMigrator.swift; sourceTree = "<group>"; };
 		2CE5F7961EE794D400200B08 /* Categorie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Categorie.swift; path = Model/Categorie/Categorie.swift; sourceTree = "<group>"; };
 		2CE5F7991EE7951D00200B08 /* Especiality.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Especiality.swift; path = Model/Especiality/Especiality.swift; sourceTree = "<group>"; };
 		2CE5F79C1EE7953F00200B08 /* MidiaPromotion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MidiaPromotion.swift; path = Model/MidiaPromotion/MidiaPromotion.swift; sourceTree = "<group>"; };
@@ -258,7 +256,6 @@
 			isa = PBXGroup;
 			children = (
 				2CE5F7901EE794B600200B08 /* RealmEncrypted.swift */,
-				2CE5F7911EE794B600200B08 /* RealmToGroupsMigrator.swift */,
 			);
 			name = Realm;
 			sourceTree = "<group>";
@@ -619,7 +616,6 @@
 				2CE5F7691EE792A700200B08 /* ErrorTypeApp.swift in Sources */,
 				2CE5F76D1EE792A700200B08 /* LanguageHeader.swift in Sources */,
 				2CE5F76A1EE792A700200B08 /* EspecialityRequest.swift in Sources */,
-				2CE5F7931EE794B600200B08 /* RealmToGroupsMigrator.swift in Sources */,
 				2CE5F7971EE794D400200B08 /* Categorie.swift in Sources */,
 				2CE5F76F1EE792A700200B08 /* NewReleasesRequest.swift in Sources */,
 				2CE5F7AE1EE7956D00200B08 /* LoginDTO.swift in Sources */,
