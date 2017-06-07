@@ -31,8 +31,16 @@ class RealmEncrypted {
             realm.refresh()
             return realm
         }
+        
+        var config = Realm.Configuration.defaultConfiguration
+        config.schemaVersion = 4
+        config.migrationBlock = { migration, oldSchemaVersion in
+        }
+        Realm.Configuration.defaultConfiguration = config
+        
         Realm.Configuration.defaultConfiguration.encryptionKey = getKey()
         let realm = try Realm()
+        print(realm)
         realm.refresh()
         return realm
     }

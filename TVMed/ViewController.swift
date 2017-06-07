@@ -8,12 +8,33 @@
 
 import Cocoa
 
-class ViewController: NSViewController {
+class ViewController: NSViewController, HomeDelegate {
 
+    lazy var viewModel: HomeViewModel = HomeViewModel(delegate:self)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        validatesToken()
+    }
+    
+    func validatesToken() {
+        let tokenPersister = TokenPersister()
+        tokenPersister.query { token in
+            
+            guard let userToken = token, !userToken.token.isEmpty else {
+                return
+            }
+            
+            self.viewModel.checkValiToken { success in
+                
+                guard !success else {
+                    return
+                }
+                self.performSegue(withIdentifier: "presentLogin", sender: nil)
+            }
+        }
     }
 
     override var representedObject: Any? {

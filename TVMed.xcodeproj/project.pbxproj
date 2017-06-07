@@ -55,6 +55,10 @@
 		2CE5F7CF1EE7968E00200B08 /* ValidatesEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE5F7C31EE7968E00200B08 /* ValidatesEmail.swift */; };
 		2CE5F7D01EE7968E00200B08 /* ValidatesPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE5F7C41EE7968E00200B08 /* ValidatesPassword.swift */; };
 		2CE5F7D21EE7992900200B08 /* BundleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE5F7D11EE7992900200B08 /* BundleHelper.swift */; };
+		2CE5F7D51EE7A21F00200B08 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CE5F7D41EE7A21F00200B08 /* Login.storyboard */; };
+		2CE5F7D91EE7A32E00200B08 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE5F7D81EE7A32E00200B08 /* HomeViewModel.swift */; };
+		2CE5F7DD1EE7A3E000200B08 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE5F7DB1EE7A3E000200B08 /* LoginViewController.swift */; };
+		2CE5F7DE1EE7A3E000200B08 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE5F7DC1EE7A3E000200B08 /* LoginViewModel.swift */; };
 		3C4034D2D248E67B9A7C8E86 /* Pods_TVMed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A967F89262A7A6CAD67F414E /* Pods_TVMed.framework */; };
 /* End PBXBuildFile section */
 
@@ -122,6 +126,10 @@
 		2CE5F7C31EE7968E00200B08 /* ValidatesEmail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ValidatesEmail.swift; path = Extensions/ValidatesEmail.swift; sourceTree = "<group>"; };
 		2CE5F7C41EE7968E00200B08 /* ValidatesPassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ValidatesPassword.swift; path = Extensions/ValidatesPassword.swift; sourceTree = "<group>"; };
 		2CE5F7D11EE7992900200B08 /* BundleHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BundleHelper.swift; path = Extensions/BundleHelper.swift; sourceTree = "<group>"; };
+		2CE5F7D41EE7A21F00200B08 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		2CE5F7D81EE7A32E00200B08 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		2CE5F7DB1EE7A3E000200B08 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2CE5F7DC1EE7A3E000200B08 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		63D48ABABC7618ABC5313A01 /* Pods-TVMed.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TVMed.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TVMed/Pods-TVMed.debug.xcconfig"; sourceTree = "<group>"; };
 		6A596F70AE162A71012C8686 /* Pods-TVMed.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TVMed.release.xcconfig"; path = "Pods/Target Support Files/Pods-TVMed/Pods-TVMed.release.xcconfig"; sourceTree = "<group>"; };
 		85B04BBD6F9F828A6CD4C630 /* Pods_TVMedTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TVMedTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,15 +180,15 @@
 		2C764AAF1EE6463900C4DC85 /* TVMed */ = {
 			isa = PBXGroup;
 			children = (
+				2CE5F7D61EE7A31900200B08 /* Controllers */,
+				2CE5F7D31EE7A20A00200B08 /* Storyboards */,
 				2CE5F7B81EE7968400200B08 /* Extensions */,
 				2CE5F7941EE794C400200B08 /* Model */,
 				2CE5F7751EE792AC00200B08 /* LocalData */,
 				2CE5F7561EE7929A00200B08 /* Networking */,
 				2CE5F7511EE7922900200B08 /* TVMed.entitlements */,
 				2C764AB01EE6463900C4DC85 /* AppDelegate.swift */,
-				2C764AB21EE6463900C4DC85 /* ViewController.swift */,
 				2C764AB41EE6463900C4DC85 /* Assets.xcassets */,
-				2C764AB61EE6463900C4DC85 /* Main.storyboard */,
 				2C764AB91EE6463900C4DC85 /* Info.plist */,
 			);
 			path = TVMed;
@@ -353,6 +361,42 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
+		2CE5F7D31EE7A20A00200B08 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				2C764AB61EE6463900C4DC85 /* Main.storyboard */,
+				2CE5F7D41EE7A21F00200B08 /* Login.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		2CE5F7D61EE7A31900200B08 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2CE5F7DA1EE7A3BF00200B08 /* Login */,
+				2CE5F7D71EE7A31D00200B08 /* Home */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		2CE5F7D71EE7A31D00200B08 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2C764AB21EE6463900C4DC85 /* ViewController.swift */,
+				2CE5F7D81EE7A32E00200B08 /* HomeViewModel.swift */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		2CE5F7DA1EE7A3BF00200B08 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				2CE5F7DB1EE7A3E000200B08 /* LoginViewController.swift */,
+				2CE5F7DC1EE7A3E000200B08 /* LoginViewModel.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
 		5E5A9E78D5955A7D74820B16 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -474,6 +518,7 @@
 			files = (
 				2C764AB51EE6463900C4DC85 /* Assets.xcassets in Resources */,
 				2C764AB81EE6463900C4DC85 /* Main.storyboard in Resources */,
+				2CE5F7D51EE7A21F00200B08 /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -610,8 +655,11 @@
 				2CE5F7861EE7947300200B08 /* LocalDataAccess.swift in Sources */,
 				2CE5F7C81EE7968E00200B08 /* String+Extensions.swift in Sources */,
 				2CE5F7CE1EE7968E00200B08 /* UIViewController+Extensions.swift in Sources */,
+				2CE5F7DD1EE7A3E000200B08 /* LoginViewController.swift in Sources */,
+				2CE5F7DE1EE7A3E000200B08 /* LoginViewModel.swift in Sources */,
 				2CE5F7921EE794B600200B08 /* RealmEncrypted.swift in Sources */,
 				2CE5F7881EE7947300200B08 /* ObjectConversion.swift in Sources */,
+				2CE5F7D91EE7A32E00200B08 /* HomeViewModel.swift in Sources */,
 				2CE5F7C51EE7968E00200B08 /* Array+Extensions.swift in Sources */,
 				2CE5F7691EE792A700200B08 /* ErrorTypeApp.swift in Sources */,
 				2CE5F76D1EE792A700200B08 /* LanguageHeader.swift in Sources */,
