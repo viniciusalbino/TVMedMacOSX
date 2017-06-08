@@ -22,14 +22,17 @@ class ViewController: NSViewController, HomeDelegate {
     func validatesToken() {
         let tokenPersister = TokenPersister()
         tokenPersister.query { token in
-            
             guard let userToken = token, !userToken.token.isEmpty else {
+                DispatchQueue.main.async {
+                    self.performSegue(withIdentifier: "presentLogin", sender: nil)
+                }
                 return
             }
             
             self.viewModel.checkValiToken { success in
-                
                 guard !success else {
+                    self.startLoading()
+//                    self.viewModel.loadMeusProdutos()
                     return
                 }
                 self.performSegue(withIdentifier: "presentLogin", sender: nil)

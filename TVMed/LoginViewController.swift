@@ -14,13 +14,38 @@ class LoginViewController: NSViewController, LoginDelegate {
     @IBOutlet weak var emailTextField: NSTextField!
     @IBOutlet weak var passwordTextField: NSSecureTextField!
     @IBOutlet weak var loginButton: NSButton!
+    @IBOutlet weak var loadingView: NSProgressIndicator!
+    @IBOutlet weak var cancelButton: NSButton!
     
     lazy var viewModel: LoginViewModel = LoginViewModel(delegate: self)
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        loadingView.isHidden = true
+    }
+    
+    override func startLoading() {
+        loadingView.isHidden = false
+        loadingView.startAnimation(self)
+        loginButton.isEnabled = false
+        passwordTextField.isEnabled = false
+        emailTextField.isEnabled = false
+        cancelButton.isEnabled = false
+    }
+    
+    override func stopLoading() {
+        loadingView.stopAnimation(self)
+        loadingView.isHidden = true
+        loginButton.isEnabled = true
+        passwordTextField.isEnabled = true
+        emailTextField.isEnabled = true
+        cancelButton.isEnabled = true
+    }
     
     func contentDidFinishedLoading(success: Bool) {
         stopLoading()
         guard success else {
-//            presentLoginIvalidAlert()
+            presentLoginIvalidAlert()
             return
         }
         dismiss(self)
@@ -46,6 +71,10 @@ class LoginViewController: NSViewController, LoginDelegate {
     }
     
     func presentLoginIvalidAlert() {
-//        self.presentAlertWithTitle(title: "Aviso", message: "Usuário ou senha inválidos")
+        let alert = NSAlert.init()
+        alert.messageText = "Aviso"
+        alert.informativeText = "Usuário ou senha inválidos"
+        alert.addButton(withTitle: "OK")
+        alert.runModal()
     }
 }

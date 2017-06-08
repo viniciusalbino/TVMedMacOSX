@@ -15,6 +15,7 @@ class LoginRequest {
     
     func request(loginDTO: LoginDTO, callback: @escaping (UserToken?, ErrorTypeApp?) -> ()) {
         BaseRequest().POST(url: "login", params: loginDTO.parameters(), headers: TVMedBaseRequestHeaders().headers()) { result, error, response in
+            print(result)
             guard error == nil else {
                 callback(nil, error)
                 return
