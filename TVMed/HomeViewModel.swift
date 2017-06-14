@@ -9,15 +9,29 @@
 import Foundation
 
 protocol HomeDelegate: class {
-    
+    func contentDidFinishedLoading(success: Bool)
 }
 
 class HomeViewModel: NSObject {
     
     weak var delegate: HomeDelegate?
+    private var midias = [MidiaPromotion]()
+    private var currentMidia: MidiaPromotion?
     
     init(delegate: HomeDelegate) {
         self.delegate = delegate
+    }
+    
+    func loadMeusProdutos() {
+        let request = OrdersRequest()
+        request.request { content, error in
+            guard error == nil, let midias = content else {
+                self.delegate?.contentDidFinishedLoading(success: false)
+                return
+            }
+            self.midias = midias
+            self.delegate?.contentDidFinishedLoading(success: true)
+        }
     }
     
     func checkValiToken(callback: @escaping (Bool) -> () ) {
@@ -25,5 +39,13 @@ class HomeViewModel: NSObject {
         request.validateToken { succes in
             callback(succes)
         }
+    }
+    
+    func numberOfItensInSection() -> Int {
+        return self.midias.count
+    }
+    
+    func getMidias() -> [MidiaPromotion] {
+        return self.midias
     }
 }

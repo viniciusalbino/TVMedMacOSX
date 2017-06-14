@@ -58,7 +58,9 @@
 		2CE5F7D91EE7A32E00200B08 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE5F7D81EE7A32E00200B08 /* HomeViewModel.swift */; };
 		2CE5F7DD1EE7A3E000200B08 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE5F7DB1EE7A3E000200B08 /* LoginViewController.swift */; };
 		2CE5F7DE1EE7A3E000200B08 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE5F7DC1EE7A3E000200B08 /* LoginViewModel.swift */; };
-		2CE5F7E21EE8E3D300200B08 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CE5F7E11EE8E3D300200B08 /* LoginViewController.xib */; };
+		2CE5F8301EEC77E700200B08 /* MeusProdutosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE5F82F1EEC77E700200B08 /* MeusProdutosViewController.swift */; };
+		2CE5F8321EEC816E00200B08 /* TopicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE5F8311EEC816E00200B08 /* TopicsViewController.swift */; };
+		2CE5F8341EEC82B000200B08 /* TopicsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE5F8331EEC82B000200B08 /* TopicsViewModel.swift */; };
 		3C4034D2D248E67B9A7C8E86 /* Pods_TVMed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A967F89262A7A6CAD67F414E /* Pods_TVMed.framework */; };
 /* End PBXBuildFile section */
 
@@ -129,7 +131,9 @@
 		2CE5F7D81EE7A32E00200B08 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		2CE5F7DB1EE7A3E000200B08 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2CE5F7DC1EE7A3E000200B08 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		2CE5F7E11EE8E3D300200B08 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		2CE5F82F1EEC77E700200B08 /* MeusProdutosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeusProdutosViewController.swift; sourceTree = "<group>"; };
+		2CE5F8311EEC816E00200B08 /* TopicsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicsViewController.swift; sourceTree = "<group>"; };
+		2CE5F8331EEC82B000200B08 /* TopicsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicsViewModel.swift; sourceTree = "<group>"; };
 		63D48ABABC7618ABC5313A01 /* Pods-TVMed.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TVMed.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TVMed/Pods-TVMed.debug.xcconfig"; sourceTree = "<group>"; };
 		6A596F70AE162A71012C8686 /* Pods-TVMed.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TVMed.release.xcconfig"; path = "Pods/Target Support Files/Pods-TVMed/Pods-TVMed.release.xcconfig"; sourceTree = "<group>"; };
 		85B04BBD6F9F828A6CD4C630 /* Pods_TVMedTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TVMedTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -365,7 +369,6 @@
 			isa = PBXGroup;
 			children = (
 				2C764AB61EE6463900C4DC85 /* Main.storyboard */,
-				2CE5F7E11EE8E3D300200B08 /* LoginViewController.xib */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -384,6 +387,9 @@
 			children = (
 				2C764AB21EE6463900C4DC85 /* ViewController.swift */,
 				2CE5F7D81EE7A32E00200B08 /* HomeViewModel.swift */,
+				2CE5F82F1EEC77E700200B08 /* MeusProdutosViewController.swift */,
+				2CE5F8311EEC816E00200B08 /* TopicsViewController.swift */,
+				2CE5F8331EEC82B000200B08 /* TopicsViewModel.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -516,7 +522,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CE5F7E21EE8E3D300200B08 /* LoginViewController.xib in Resources */,
 				2C764AB51EE6463900C4DC85 /* Assets.xcassets in Resources */,
 				2C764AB81EE6463900C4DC85 /* Main.storyboard in Resources */,
 			);
@@ -645,6 +650,7 @@
 				2CE5F76C1EE792A700200B08 /* HeaderBuilder.swift in Sources */,
 				2CE5F79A1EE7951D00200B08 /* Especiality.swift in Sources */,
 				2CE5F7CB1EE7968E00200B08 /* UIColor+Extensions.swift in Sources */,
+				2CE5F8341EEC82B000200B08 /* TopicsViewModel.swift in Sources */,
 				2CE5F7871EE7947300200B08 /* LocalDataAccessUnique.swift in Sources */,
 				2CE5F7701EE792A700200B08 /* OrdersRequest.swift in Sources */,
 				2CE5F7731EE792A700200B08 /* UserRequests.swift in Sources */,
@@ -653,6 +659,7 @@
 				2CE5F7A71EE7956000200B08 /* MidiaTopic.swift in Sources */,
 				2CE5F79D1EE7953F00200B08 /* MidiaPromotion.swift in Sources */,
 				2CE5F7861EE7947300200B08 /* LocalDataAccess.swift in Sources */,
+				2CE5F8301EEC77E700200B08 /* MeusProdutosViewController.swift in Sources */,
 				2CE5F7C81EE7968E00200B08 /* String+Extensions.swift in Sources */,
 				2CE5F7CE1EE7968E00200B08 /* UIViewController+Extensions.swift in Sources */,
 				2CE5F7DD1EE7A3E000200B08 /* LoginViewController.swift in Sources */,
@@ -670,6 +677,7 @@
 				2CE5F7A01EE7954D00200B08 /* Releases.swift in Sources */,
 				2CE5F7AF1EE7956D00200B08 /* RemoteCreditCard.swift in Sources */,
 				2CE5F7D01EE7968E00200B08 /* ValidatesPassword.swift in Sources */,
+				2CE5F8321EEC816E00200B08 /* TopicsViewController.swift in Sources */,
 				2CE5F7A61EE7956000200B08 /* MidiaSubTopic.swift in Sources */,
 				2CE5F7B11EE7956D00200B08 /* User.swift in Sources */,
 				2CE5F76E1EE792A700200B08 /* LoginRequest.swift in Sources */,
