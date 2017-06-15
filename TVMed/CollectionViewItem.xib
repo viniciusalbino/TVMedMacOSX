@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12120"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="CollectionViewItem" customModule="TVMed" customModuleProvider="target">
+            <connections>
+                <outlet property="titleLabel" destination="qvL-Sq-YF5" id="n4n-vU-hur"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="500" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qvL-Sq-YF5">
+                    <rect key="frame" x="-2" y="0.0" width="504" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="80" id="9OQ-p5-xjB"/>
+                    </constraints>
+                    <textFieldCell key="cell" lineBreakMode="truncatingTail" truncatesLastVisibleLine="YES" sendsActionOnEndEditing="YES" alignment="center" title="Label" id="RIV-gP-xZc">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="qvL-Sq-YF5" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="0Ex-73-jWa"/>
+                <constraint firstItem="qvL-Sq-YF5" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="7I1-uU-Fe0"/>
+                <constraint firstAttribute="bottom" secondItem="qvL-Sq-YF5" secondAttribute="bottom" id="oJW-7u-pUK"/>
+                <constraint firstAttribute="trailing" secondItem="qvL-Sq-YF5" secondAttribute="trailing" id="oac-1N-V7C"/>
+            </constraints>
+        </customView>
+        <collectionViewItem id="C8B-Iu-Qkx" customClass="CollectionViewItem" customModule="TVMed" customModuleProvider="target">
+            <connections>
+                <outlet property="titleLabel" destination="qvL-Sq-YF5" id="ehW-wa-mc7"/>
+            </connections>
+        </collectionViewItem>
+    </objects>
+</document>

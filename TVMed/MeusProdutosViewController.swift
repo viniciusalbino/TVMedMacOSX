@@ -94,6 +94,9 @@ class MeusProdutosViewController: NSViewController, HomeDelegate, NSTableViewDel
         guard tableView.selectedRow >= 0 else {
                 return
         }
-        
+        guard let viewController = parent?.childViewControllers[1] as? TopicsViewController, let currentMidia = viewModel.getMidias().object(index: tableView.selectedRow) else {
+            return
+        }
+        viewController.loadContent(midia: currentMidia)
     }
 }

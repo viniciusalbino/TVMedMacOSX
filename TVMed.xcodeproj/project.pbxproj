@@ -61,6 +61,8 @@
 		2CE5F8301EEC77E700200B08 /* MeusProdutosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE5F82F1EEC77E700200B08 /* MeusProdutosViewController.swift */; };
 		2CE5F8321EEC816E00200B08 /* TopicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE5F8311EEC816E00200B08 /* TopicsViewController.swift */; };
 		2CE5F8341EEC82B000200B08 /* TopicsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE5F8331EEC82B000200B08 /* TopicsViewModel.swift */; };
+		2CE5F8371EF2195500200B08 /* CollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE5F8351EF2195500200B08 /* CollectionViewItem.swift */; };
+		2CE5F8381EF2195500200B08 /* CollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CE5F8361EF2195500200B08 /* CollectionViewItem.xib */; };
 		3C4034D2D248E67B9A7C8E86 /* Pods_TVMed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A967F89262A7A6CAD67F414E /* Pods_TVMed.framework */; };
 /* End PBXBuildFile section */
 
@@ -134,6 +136,8 @@
 		2CE5F82F1EEC77E700200B08 /* MeusProdutosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeusProdutosViewController.swift; sourceTree = "<group>"; };
 		2CE5F8311EEC816E00200B08 /* TopicsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicsViewController.swift; sourceTree = "<group>"; };
 		2CE5F8331EEC82B000200B08 /* TopicsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicsViewModel.swift; sourceTree = "<group>"; };
+		2CE5F8351EF2195500200B08 /* CollectionViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewItem.swift; sourceTree = "<group>"; };
+		2CE5F8361EF2195500200B08 /* CollectionViewItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewItem.xib; sourceTree = "<group>"; };
 		63D48ABABC7618ABC5313A01 /* Pods-TVMed.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TVMed.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TVMed/Pods-TVMed.debug.xcconfig"; sourceTree = "<group>"; };
 		6A596F70AE162A71012C8686 /* Pods-TVMed.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TVMed.release.xcconfig"; path = "Pods/Target Support Files/Pods-TVMed/Pods-TVMed.release.xcconfig"; sourceTree = "<group>"; };
 		85B04BBD6F9F828A6CD4C630 /* Pods_TVMedTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TVMedTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -390,6 +394,8 @@
 				2CE5F82F1EEC77E700200B08 /* MeusProdutosViewController.swift */,
 				2CE5F8311EEC816E00200B08 /* TopicsViewController.swift */,
 				2CE5F8331EEC82B000200B08 /* TopicsViewModel.swift */,
+				2CE5F8351EF2195500200B08 /* CollectionViewItem.swift */,
+				2CE5F8361EF2195500200B08 /* CollectionViewItem.xib */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -524,6 +530,7 @@
 			files = (
 				2C764AB51EE6463900C4DC85 /* Assets.xcassets in Resources */,
 				2C764AB81EE6463900C4DC85 /* Main.storyboard in Resources */,
+				2CE5F8381EF2195500200B08 /* CollectionViewItem.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,6 +673,7 @@
 				2CE5F7DE1EE7A3E000200B08 /* LoginViewModel.swift in Sources */,
 				2CE5F7921EE794B600200B08 /* RealmEncrypted.swift in Sources */,
 				2CE5F7881EE7947300200B08 /* ObjectConversion.swift in Sources */,
+				2CE5F8371EF2195500200B08 /* CollectionViewItem.swift in Sources */,
 				2CE5F7D91EE7A32E00200B08 /* HomeViewModel.swift in Sources */,
 				2CE5F7C51EE7968E00200B08 /* Array+Extensions.swift in Sources */,
 				2CE5F7691EE792A700200B08 /* ErrorTypeApp.swift in Sources */,
