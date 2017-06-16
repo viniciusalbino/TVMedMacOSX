@@ -10,7 +10,7 @@ import Foundation
 import Cocoa
 import CoreGraphics
 
-class TopicsViewController: NSViewController, TopicsDelegate, NSCollectionViewDataSource, NSCollectionViewDelegate {
+class TopicsViewController: NSViewController, TopicsDelegate, NSCollectionViewDataSource, NSCollectionViewDelegate, NSCollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var collectionView: NSCollectionView!
     @IBOutlet weak var loadingView: NSProgressIndicator!
@@ -29,7 +29,7 @@ class TopicsViewController: NSViewController, TopicsDelegate, NSCollectionViewDa
         // 1
         let flowLayout = NSCollectionViewFlowLayout()
         flowLayout.itemSize = NSSize(width: 700, height: 80.0)
-        flowLayout.sectionInset = EdgeInsets(top: 10.0, left: 5, bottom: 10.0, right: 5.0)
+        flowLayout.sectionInset = EdgeInsets(top: 30.0, left: 5.0, bottom: 30.0, right: 5.0)
         flowLayout.minimumInteritemSpacing = 10.0
         flowLayout.minimumLineSpacing = 10.0
         collectionView.collectionViewLayout = flowLayout
@@ -76,6 +76,10 @@ class TopicsViewController: NSViewController, TopicsDelegate, NSCollectionViewDa
         return viewModel.numberOfItensInSection(section: section)
     }
     
+    func collectionView(_ collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> NSSize {
+        return NSSize(width: collectionView.frame.size.width, height: 40)
+    }
+    
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
         let item = collectionView.makeItem(withIdentifier: "CollectionViewItem", for: indexPath)
         guard let collectionViewItem = item as? CollectionViewItem else {return item}
@@ -84,6 +88,12 @@ class TopicsViewController: NSViewController, TopicsDelegate, NSCollectionViewDa
         // 5
         collectionViewItem.fill(title: itemDetail.titulo)
         return item
+    }
+    
+    func collectionView(_ collectionView: NSCollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> NSView {
+        let view  = collectionView.makeSupplementaryView(ofKind: NSCollectionElementKindSectionHeader, withIdentifier: "HeaderView", for: indexPath) as! HeaderView
+        view.fill(title: viewModel.titleForHeaderInSection(section: indexPath.section))
+        return view
     }
     
 }

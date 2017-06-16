@@ -23,7 +23,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="80" id="9OQ-p5-xjB"/>
                     </constraints>
-                    <textFieldCell key="cell" lineBreakMode="truncatingTail" truncatesLastVisibleLine="YES" sendsActionOnEndEditing="YES" alignment="center" title="Label" id="RIV-gP-xZc">
+                    <textFieldCell key="cell" lineBreakMode="truncatingTail" truncatesLastVisibleLine="YES" sendsActionOnEndEditing="YES" alignment="left" title="Label" id="RIV-gP-xZc">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>

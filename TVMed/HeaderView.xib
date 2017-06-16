@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12120"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView identifier="HeaderView" id="7CU-Va-u1t" customClass="HeaderView" customModule="TVMed" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="700" height="40"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Px2-1f-L5S">
+                    <rect key="frame" x="13" y="0.0" width="674" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="nl2-Jm-r1G"/>
+                    </constraints>
+                    <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="center" title="Multiline Label" id="GNi-9b-6kH">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="Px2-1f-L5S" firstAttribute="top" secondItem="7CU-Va-u1t" secondAttribute="top" id="PGH-sT-RPu"/>
+                <constraint firstItem="Px2-1f-L5S" firstAttribute="leading" secondItem="7CU-Va-u1t" secondAttribute="leading" constant="15" id="UZK-nh-UtC"/>
+                <constraint firstAttribute="trailing" secondItem="Px2-1f-L5S" secondAttribute="trailing" constant="15" id="bYM-2S-94V"/>
+                <constraint firstAttribute="bottom" secondItem="Px2-1f-L5S" secondAttribute="bottom" id="fQh-uz-Aox"/>
+            </constraints>
+            <connections>
+                <outlet property="titleLabel" destination="Px2-1f-L5S" id="7RU-2s-WWH"/>
+            </connections>
+            <point key="canvasLocation" x="113" y="219"/>
+        </customView>
+    </objects>
+</document>
