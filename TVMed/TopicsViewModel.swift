@@ -8,11 +8,14 @@
 
 import Foundation
 import Cocoa
+import Alamofire
+import MediaPlayer
 
 protocol TopicsDelegate: class {
     func contentDidFinishedLoading(success: Bool)
-//    func playVideo(url: String)
+    func playVideo(url: String, subTopicID: String)
     func downloadVideo(url: String)
+    func errorOnPlayingVideo()
 }
 
 class TopicsViewModel {
@@ -42,6 +45,33 @@ class TopicsViewModel {
             return topic.congressoTitulo
         } else {
             return ""
+        }
+    }
+    
+    func isMovietDownloaded(subTopic: MidiaSubTopic) -> Bool {
+        if let path = subTopic.urlInDocumentsDirectory?.path {
+            let fileManager = FileManager.default
+            return fileManager.fileExists(atPath: path)
+        }
+        return false
+    }
+    
+    func downloadMovie(topicID: String, url: URL ,completionHandler: (Double?, NSError?) -> Void) {
+        Alamofire.download(url, method: .get, to: { (url, response) -> (destinationURL: URL, options: DownloadRequest.DownloadOptions) in
+            let pathComponent = topicID
+            
+            let fileManager = FileManager.default
+            let directoryURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
+            let fileUrl = directoryURL.appendingPathComponent(pathComponent) as URL
+            return (fileUrl, [.removePreviousFile, .createIntermediateDirectories])
+        })
+            .downloadProgress(queue: DispatchQueue.global(qos: .background), closure: { progress in
+                print("Download Progress: \(progress.fractionCompleted)")
+            })
+            .responseData { response in
+            if let data = response.result.value {
+                print(data.count)
+            }
         }
     }
     
@@ -84,7 +114,7 @@ class TopicsViewModel {
                     self.createNewUDID(subTopicID: subTopicID)
                 }
             } catch {
-//                self.delegate?.errorOnPlayingVideo()
+                self.delegate?.errorOnPlayingVideo()
                 print("Realm did not query objects!")
             }
         }
@@ -93,13 +123,13 @@ class TopicsViewModel {
     func createNewUDID(subTopicID: String) {
         videoRemoteService.getDeviceToken { uid, error in
             guard error == nil, let udid = uid else {
-//                self.delegate?.errorOnPlayingVideo()
+                self.delegate?.errorOnPlayingVideo()
                 return
             }
             let dto = UIDDTO(uid: udid.uid, nome: udid.uid, tipoDispositivo: 1)
             self.videoRemoteService.createDeviceToken(dto: dto, callback: { uid, error in
                 guard error == nil, let udid = uid else {
-//                    self.delegate?.errorOnPlayingVideo()
+                    self.delegate?.errorOnPlayingVideo()
                     return
                 }
                 self.saveNewUID(uid: udid)
@@ -123,15 +153,15 @@ class TopicsViewModel {
         let dto = VideoTokenDTO(subTopicoId: subTopicID, uid: uid.uid)
         self.videoRemoteService.validateVideoToken(dto: dto, callback: { videoToken, error in
             guard error == nil, let token = videoToken else {
-//                self.delegate?.errorOnPlayingVideo()
+                self.delegate?.errorOnPlayingVideo()
                 return
             }
-            self.createsVideoURL(videoToken: token, uid: uid)
+            self.createsVideoURL(videoToken: token, uid: uid, subTopicID: subTopicID)
         })
     }
     
-    func createsVideoURL(videoToken: VideoToken, uid: UDID) {
+    func createsVideoURL(videoToken: VideoToken, uid: UDID, subTopicID: String) {
         let url = "http://" + videoToken.server + ":1935/vods3/_definst_/mp4:amazons3/tvmedvod/midia/" + videoToken.videoUri + "/playlist.m3u8?token=" + videoToken.token + "&uid=" + uid.uid
-//        self.delegate?.playVideo(url: url)
+        self.delegate?.playVideo(url: url, subTopicID: subTopicID)
     }
 }

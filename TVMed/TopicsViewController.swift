@@ -86,7 +86,7 @@ class TopicsViewController: NSViewController, TopicsDelegate, NSCollectionViewDa
         
         let itemDetail = viewModel.itemForSection(section: indexPath.section, row: indexPath.item)
         // 5
-        collectionViewItem.fill(title: itemDetail.titulo)
+        collectionViewItem.fill(title: itemDetail.titulo, isDowwloaded: viewModel.isMovietDownloaded(subTopic: itemDetail))
         return item
     }
     
@@ -94,6 +94,25 @@ class TopicsViewController: NSViewController, TopicsDelegate, NSCollectionViewDa
         let view  = collectionView.makeSupplementaryView(ofKind: NSCollectionElementKindSectionHeader, withIdentifier: "HeaderView", for: indexPath) as! HeaderView
         view.fill(title: viewModel.titleForHeaderInSection(section: indexPath.section))
         return view
+    }
+    
+    func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
+        collectionView.deselectItems(at: indexPaths)
+        let subTopic = viewModel.itemForSection(section: indexPaths.first!.section, row: indexPaths.first!.item)
+        if !viewModel.isMovietDownloaded(subTopic: subTopic) {
+            viewModel.validatesUserToken(subTopicID: subTopic.subtopicoId)
+        }
+    }
+    
+    func playVideo(url: String, subTopicID: String) {
+        print(url)
+        viewModel.downloadMovie(topicID: subTopicID, url: URL(string: url)!) { progress, error in
+            
+        }
+    }
+    
+    func errorOnPlayingVideo() {
+        stopLoading()
     }
     
 }

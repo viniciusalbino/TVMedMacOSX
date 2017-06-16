@@ -40,6 +40,7 @@ class NewReleasesRequest  {
                     callback(nil, error)
                     return
                 }
+                
                 let result = result <*> (MidiaDetail.self, error)
                 callback(result.object, result.error)
             })

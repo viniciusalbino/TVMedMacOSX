@@ -11,9 +11,11 @@ import Cocoa
 class CollectionViewItem: NSCollectionViewItem {
 
     @IBOutlet weak var titleLabel: NSTextField!
+    @IBOutlet weak var downloadStatus: NSImageView!
     
-    func fill(title: String) {
+    func fill(title: String, isDowwloaded: Bool) {
         titleLabel.stringValue = title
+        downloadStatus.image = isDowwloaded ? #imageLiteral(resourceName: "play_icon") : #imageLiteral(resourceName: "download_icon")
     }
     
     override func viewDidLoad() {
@@ -24,5 +26,4 @@ class CollectionViewItem: NSCollectionViewItem {
         titleLabel.maximumNumberOfLines = 10
         titleLabel.usesSingleLineMode = false
     }
-    
 }

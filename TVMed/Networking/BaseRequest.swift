@@ -52,12 +52,14 @@ class BaseRequest: NSObject {
     
     func GET(url: String, params: JSONDictionary?, headers: [String: String], callback: @escaping DefaultCallBackClosure) {
         let finalURL = "\(domain)\(url)"
+//        print(headers)
+//        print(params)
+//        print(finalURL)
         Alamofire.request(finalURL, method: .get, parameters: params, encoding: URLEncoding.httpBody, headers: headers).responseJSON { response in
             guard let _ = response.result.value else {
                 callback(nil, .apiError, response.response)
                 return
             }
-            
             if let result = response.result.value {
                 callback(result as AnyObject?, nil, response.response)
             }

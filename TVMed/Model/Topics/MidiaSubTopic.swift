@@ -24,6 +24,18 @@ struct MidiaSubTopic: Mappable {
         
     }
     
+    var urlInDocumentsDirectory: URL? {
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        if paths.count > 0 {
+            let path = paths[0]
+            if let directory = URL(string: path) {
+                let fileURL = directory.appendingPathComponent(subtopicoId)
+                return fileURL
+            }
+        }
+        return nil
+    }
+    
     mutating func mapping(map: Map) {
         ordem <- map["ordem"]
         titulo <- map["titulo"]
